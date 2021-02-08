@@ -76,7 +76,7 @@ jobs:
           name: sdist
           path: ~/.toxworkdir/dist
       - name: Display structure of downloaded files
-        run: ls -R ~/
+        run: ls -aR ~/.toxworkdir
       - name: Run Tox
         # Run tox using the version of Python in `PATH`
         run: python -m tox -vv
