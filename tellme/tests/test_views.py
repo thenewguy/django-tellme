@@ -102,7 +102,8 @@ class GetFeedbackScreenshotViewTest(TestCase):
         feedback = Feedback.objects.create(
             url=fake.url(),
             browser=fake.user_agent(),
-            img=make_base64_img(),
+            comment=fake.sentence(),
+            screenshot=make_base64_img(),
             email=fake.email(),
         )
         response = self.client.get(feedback.get_screenshot_url())
