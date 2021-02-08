@@ -107,5 +107,5 @@ class GetFeedbackScreenshotViewTest(TestCase):
             email=fake.email(),
         )
         response = self.client.get(feedback.get_screenshot_url())
-        self.assertEqual(response.status_code, 301)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(response['Location'], feedback.screenshot.url)
