@@ -74,9 +74,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: sdist
-          path: ~/.toxworkdir/dist
+          path: ~/.toxsdistsrc/dist
       - name: Display structure of downloaded files
-        run: ls -aR ~/.toxworkdir
+        run: ls -aR ~/.toxsdistsrc/
       - name: Run Tox
         # Run tox using the version of Python in `PATH`
         run: python -m tox -vv
