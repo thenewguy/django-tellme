@@ -37,6 +37,12 @@ jobs:
           python-version: '3.x'
       - name: Install Tox and any other packages
         run: python -m pip install tox tox-gh-actions
+      - name: Download frontend artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: frontend-assets
+      - name: Unpack frontend artifact
+        run: unzip artifact.zip
       - name: Build sdist
         run: python -m tox -vv --sdistonly
       - name: Archive sdist
@@ -62,12 +68,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install Tox and any other packages
         run: python -m pip install tox tox-gh-actions
-      - name: Download frontend artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: frontend-assets
-      - name: Unpack frontend artifact
-        run: unzip artifact.zip
       - name: Download sdist
         uses: actions/download-artifact@v2
         with:
