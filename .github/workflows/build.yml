@@ -44,7 +44,7 @@ jobs:
       - name: Unpack frontend artifact
         run: unzip artifact.zip
       - name: Display file tree
-        run: ls -aR .
+        run: ls -laR tellme
       - name: Build sdist
         run: python -m tox -vv --sdistonly
       - name: Archive sdist
