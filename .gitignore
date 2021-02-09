@@ -1,4 +1,4 @@
-dist/
+/dist/
 build/
 django-tellme-*/
 django_tellme.egg-info/
