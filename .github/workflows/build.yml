@@ -102,8 +102,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: pre-${{ github.run_number }}-${{ github.ref }}-${{ github.sha }}
-          release_name: Pre-Release ${{ github.run_number }} ${{ github.ref }} ${{ github.sha }}
+          tag_name: pre-${{ github.run_number }}-${{ github.sha }}
+          release_name: Pre-Release ${{ github.run_number }}
           draft: false
           prerelease: true
       - name: Upload Release Asset
