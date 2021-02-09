@@ -70,6 +70,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+      # Remove tellme source folder so we operate on the installed sdist
+      - name: Remove source folder
+        run: rm -Rf tellme
       - name: Install Tox and any other packages
         run: python -m pip install tox tox-gh-actions
       - name: Download sdist
