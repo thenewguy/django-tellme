@@ -13,6 +13,6 @@ ASSETS = [
 class AssetTests(TestCase):
     def test_assets_exist(self):
         for asset in ASSETS:
-            with self.subTest(asset=asset)
+            with self.subTest(asset=asset):
                 result = finders.find(asset)
                 self.assertTrue(result, MISSING_ASSET % asset)
